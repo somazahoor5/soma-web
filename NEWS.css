@@ -1,3 +1,5 @@
+/* GLOBAL */
+
 *{
 margin:0;
 padding:0;
@@ -16,12 +18,18 @@ header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 50px;
+padding:15px 60px;
 background:#d62828;
 color:white;
 position:sticky;
 top:0;
+z-index:1000;
 box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+.logo{
+font-size:22px;
+font-weight:600;
 }
 
 nav a{
@@ -33,9 +41,12 @@ transition:0.3s;
 }
 
 nav a:hover{
-color:#ff66d1;
+color:#ffd166;
 }
-
+nav i{
+    font-size: 1.6vw;
+    font-weight: 800;
+}
 /* HERO */
 
 .hero{
@@ -47,6 +58,7 @@ justify-content:center;
 align-items:center;
 text-align:center;
 color:white;
+padding:20px;
 }
 
 .hero h1{
@@ -54,8 +66,13 @@ font-size:48px;
 margin-bottom:10px;
 }
 
+.hero p{
+font-size:20px;
+margin-bottom:20px;
+}
+
 .hero button{
-padding:10px 25px;
+padding:12px 30px;
 background:#f77f00;
 border:none;
 color:white;
@@ -67,17 +84,18 @@ transition:0.3s;
 
 .hero button:hover{
 transform:scale(1.1);
+background:#ff9f1c;
 }
 
 /* SECTIONS */
 
 section{
-padding:60px 50px;
+padding:70px 80px;
 text-align:center;
 }
 
 h2{
-font-size:32px;
+font-size:34px;
 margin-bottom:20px;
 color:#333;
 }
@@ -86,6 +104,8 @@ color:#333;
 
 .about{
 background:white;
+max-width:900px;
+margin:auto;
 }
 
 /* MENU */
@@ -95,20 +115,21 @@ background:#f1f1f1;
 }
 
 .menu-container{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:30px;
 margin-top:30px;
+max-width:1100px;
+margin-left:auto;
+margin-right:auto;
 }
 
 /* CARD */
 
 .card{
 background:white;
-width:250px;
-border-radius:10px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 overflow:hidden;
 transition:0.3s;
 }
@@ -121,6 +142,7 @@ object-fit:cover;
 
 .card h3{
 margin:15px 0 5px;
+font-size:20px;
 }
 
 .card p{
@@ -146,4 +168,76 @@ background:#003049;
 color:white;
 text-align:center;
 padding:20px;
+margin-top:40px;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* TABLET */
+
+@media (max-width:992px){
+
+header{
+padding:15px 30px;
+}
+
+section{
+padding:60px 40px;
+}
+
+.hero h1{
+font-size:38px;
+}
+
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+header{
+flex-direction:column;
+gap:10px;
+text-align:center;
+}
+
+nav a{
+margin:0 10px;
+}
+
+.hero{
+height:80vh;
+}
+
+.hero h1{
+font-size:30px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+section{
+padding:50px 20px;
+}
+
+}
+
+/* SMALL MOBILE */
+
+@media (max-width:480px){
+
+.hero h1{
+font-size:24px;
+}
+
+.hero button{
+padding:10px 20px;
+font-size:14px;
+}
+
+.logo{
+font-size:18px;
+}
+
 }
